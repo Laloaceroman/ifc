@@ -1280,6 +1280,43 @@ app.tabs = {
   }
 };
 
+app.testimonies = {
+  init: function() {
+    app.testimonies.autoplay();
+    return $(".section--testimonies").find(".section__avatar").click(function() {
+      var container, index;
+      index = $(this).index();
+      container = $(this).closest(".section--testimonies");
+      app.testimonies.goto(container, index);
+      return app.testimonies.autoplay();
+    });
+  },
+  autoplayInterval: void 0,
+  autoplay: function() {
+    clearTimeout(app.testimonies.autoplayInterval);
+    return app.testimonies.autoplayInterval = setInterval(function() {
+      return $(".section--testimonies").each(function() {
+        var container;
+        container = $(this);
+        return app.testimonies.next(container);
+      });
+    }, 10000);
+  },
+  next: function(container) {
+    var current, next;
+    current = container.find(".section__avatar.current").index();
+    next = current + 1;
+    if (next >= container.find(".section__avatar").length) {
+      next = 0;
+    }
+    return app.testimonies.goto(container, next);
+  },
+  goto: function(container, index) {
+    container.find(".section__avatar").removeClass("current").eq(index).addClass("current");
+    return container.find(".section__testimony").removeClass("in").addClass("out").eq(index).removeClass("out").addClass("in");
+  }
+};
+
 $(document).ready(function() {
   var component, properties, results;
   results = [];
