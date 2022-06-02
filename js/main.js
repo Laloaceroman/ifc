@@ -4405,7 +4405,7 @@ app.isotope = {
     buttonFilter = void 0;
     qsRegex = void 0;
     $grid = $('.grid').isotope({
-      itemSelector: '.col-xs-12',
+      itemSelector: '.col-xs-6',
       layoutMode: 'masonry',
       filter: function() {
         var $this, buttonResult, searchResult;
@@ -4480,9 +4480,22 @@ app.modal = {
     $(".modal__close").click(function() {
       return app.modal.close($(this).closest(".modal"));
     });
-    return $("[data-modal-login]").click(function(e) {
+    $('.modal').click(function(e) {
+      if ($(e.target).hasClass('modal__front')) {
+        app.modal.close($(this).closest(".modal"));
+        if ($(this).hasClass("modal--login")) {
+          $(".modal--login .modal__header--default").addClass("modal__header--show");
+          return $(".modal--login .modal__header--validate").removeClass("modal__header--show");
+        }
+      }
+    });
+    $("[data-modal-download]").click(function(e) {
       e.preventDefault();
-      return app.modal.open(".modal--login");
+      return app.modal.open(".modal--download");
+    });
+    return $("[data-product-modal]").click(function(e) {
+      e.preventDefault();
+      return app.modal.open(".modal--product");
     });
   },
   open: function(elementclass) {
@@ -4890,7 +4903,7 @@ app.swiper = {
       breakpoints: {
         0: {
           slidesPerView: 2,
-          spaceBetween: 0,
+          spaceBetween: 10,
           slidesPerGroup: 1
         },
         800: {
