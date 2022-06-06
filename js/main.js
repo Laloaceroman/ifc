@@ -4896,6 +4896,10 @@ app.swiper = {
         el: '.swiper-pagination',
         clickable: true
       },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+      },
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
@@ -4907,7 +4911,7 @@ app.swiper = {
           slidesPerGroup: 1
         },
         800: {
-          slidesPerView: 4,
+          slidesPerView: 5,
           spaceBetween: 10,
           slidesPerGroup: 1
         }

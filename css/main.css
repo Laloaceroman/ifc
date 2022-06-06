@@ -41,7 +41,7 @@ html {
 }
 body {
   -webkit-font-smoothing: antialiased;
-  background: #fff;
+  background: transparent;
   margin: 0;
 }
 body,
@@ -1465,8 +1465,8 @@ article.article--marca .article__marca img {
 }
 article.article--client {
   background-color: #fff;
-  padding: 20px;
-  min-height: 110px;
+  padding: 10px;
+  min-height: 80px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
@@ -1489,6 +1489,7 @@ article.article--feature {
       flex-direction: column;
   padding: 15px;
   min-height: 240px;
+  background-color: #fff;
 }
 @media (min-width: 720px) {
   article.article--feature {
@@ -1816,6 +1817,11 @@ footer .footer__wrap {
 }
 footer .footer__wrap.footer__wrap--terms {
   padding: 15px 20px;
+}
+footer .footer__infos ul li {
+  font-size: 16px;
+  line-height: 20px;
+  padding: 5px;
 }
 footer .footer__nav {
   padding: 20px 0;
@@ -2468,22 +2474,24 @@ header.header--static .header__item.header__item--search .header__search input::
     position: absolute;
     top: 0;
     right: 0;
-    width: 260px;
+    width: 100%;
     height: 10000%;
-    background: #fff;
+    background: rgba(20,39,78,0.95);
     color: #fff;
     -webkit-animation: slideLeft 0.5s ease;
             animation: slideLeft 0.5s ease;
+    text-align: center;
+    border-top: 10px solid #54e19b;
   }
   header .header__nav .header__nav__nav ul {
-    padding: 80px 0;
+    padding: 40px 0;
     padding-bottom: 20px;
   }
   header .header__nav .header__nav__nav ul li {
-    border-bottom: 1px solid #f2f2f2;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
   header .header__nav .header__nav__nav ul li a {
-    color: #000;
+    color: #fff;
     font-weight: 400;
     padding: 15px 20px;
     display: block;
@@ -2491,7 +2499,7 @@ header.header--static .header__item.header__item--search .header__search input::
   }
   header .header__nav .header__nav__nav ul li a .fa {
     float: right;
-    opacity: 0.5;
+    opacity: 1;
     margin-left: 10px;
     position: relative;
     top: 4px;
@@ -2501,7 +2509,7 @@ header.header--static .header__item.header__item--search .header__search input::
     top: 0;
     left: 0;
     width: 100%;
-    background: #fff;
+    background: rgba(20,39,78,0.95);
     display: none;
     box-shadow: rgba(0,0,0,0.1) 0px 1px 3px 0px, rgba(0,0,0,0.06) 0px 1px 2px 0px;
     z-index: 2;
@@ -2520,6 +2528,13 @@ header.header--static .header__item.header__item--search .header__search input::
     -webkit-animation: slideRightOut 0.5s ease both;
             animation: slideRightOut 0.5s ease both;
   }
+  header .header__nav .header__nav__nav .header__nav__logo {
+    width: 100%;
+    margin-top: 20px;
+  }
+  header .header__nav .header__nav__nav .header__nav__logo img {
+    width: 100px;
+  }
   header .header__nav .header__nav__bg {
     -webkit-animation: fadeIn 0.5s ease;
             animation: fadeIn 0.5s ease;
@@ -2530,8 +2545,30 @@ header.header--static .header__item.header__item--search .header__search input::
     height: 100%;
     height: 5000%;
     background: #000;
-    opacity: 0.5;
+    opacity: 0;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
+  header .header__nav .header__socials {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    padding-top: 40px;
+  }
+  header .header__nav .header__socials .header__social {
+    background-color: #54e19b;
+    color: #fff;
+    margin: 0px 5px;
+    border-radius: 5px;
+  }
+  header .header__nav .header__socials .header__social a {
+    color: #fff;
+    padding: 7px 20px;
+    display: inline-block;
+    position: relative;
+    font-size: 24px;
+    line-height: 24px;
   }
   header .header__nav .header__nav__close {
     display: block;
@@ -2637,6 +2674,10 @@ header.header--static .header__item.header__item--search .header__search input::
   header .header__nav .header__nav__nav ul li a .fa {
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
+  }
+  header .header__nav .header__nav__nav .header__socials,
+  header .header__nav .header__nav__nav .header__nav__logo {
+    display: none;
   }
   header .header__right ul {
     display: block;
@@ -2839,6 +2880,72 @@ header.header--static .header__item.header__item--search .header__search input::
     color: #fff;
   }
 }
+.isotipo {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  opacity: 0.1;
+}
+@media (min-width: 720px) {
+  .isotipo {
+    height: 400px;
+  }
+}
+.isotipo .isotipo__1 {
+  width: 150px;
+  height: 150px;
+}
+@media (min-width: 720px) {
+  .isotipo .isotipo__1 {
+    width: 400px;
+    height: 400px;
+  }
+}
+.isotipo .isotipo__1 img {
+  width: 150px;
+}
+@media (min-width: 720px) {
+  .isotipo .isotipo__1 img {
+    width: 400px;
+  }
+}
+.isotipo .isotipo__boxs .isotipo__box__1 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 100px;
+  background-color: #54e19b;
+  border-radius: 5px;
+}
+@media (min-width: 720px) {
+  .isotipo .isotipo__boxs .isotipo__box__1 {
+    width: 300px;
+    height: 200px;
+  }
+}
+.isotipo .isotipo__boxs .isotipo__box__2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 25px;
+  height: 50px;
+  background-color: #14274e;
+  z-index: 2;
+  border-radius: 5px;
+}
+@media (min-width: 720px) {
+  .isotipo .isotipo__boxs .isotipo__box__2 {
+    width: 200px;
+    height: 100px;
+  }
+}
 .modal {
   position: fixed;
   top: 0;
@@ -2985,7 +3092,7 @@ header.header--static .header__item.header__item--search .header__search input::
 section {
   position: relative;
   color: #000;
-  background: #fff;
+  background: transparent;
 }
 section .section__bg {
   position: absolute;
@@ -3275,7 +3382,7 @@ section .section__wrap.section__wrap--main {
 }
 @media (min-width: 720px) {
   section .section__wrap.section__wrap--main {
-    padding: 300px 40px 250px;
+    padding: 230px 40px 180px;
   }
 }
 section .section__wrap.section__wrap--header {
@@ -3283,7 +3390,7 @@ section .section__wrap.section__wrap--header {
 }
 @media (min-width: 720px) {
   section .section__wrap.section__wrap--header {
-    padding: 240px 40px 140px;
+    padding: 200px 40px 100px;
   }
 }
 section .section__wrap.section__wrap--header--sm {
@@ -3414,7 +3521,7 @@ section.section--main .section__thumbs {
 }
 @media (min-width: 720px) {
   section.section--main .section__thumbs {
-    bottom: 50px;
+    bottom: 20px;
     padding: 0px 40px;
   }
 }
@@ -3542,31 +3649,31 @@ section.section--header .section__bg:after {
   background: #14274e;
   background: linear-gradient(90deg, #14274e, transparent);
 }
-section.section--banner.section--banner--right .section__body {
+section.section--banner.section--banner--right .section__banner {
   -ms-flex-align: end;
       align-items: flex-end;
   text-align: right;
 }
-section.section--banner.section--banner--right .section__body .section__isotipo {
+section.section--banner.section--banner--right .section__banner .section__isotipo {
   position: absolute;
   bottom: 0;
   left: initial;
   right: 0;
   opacity: 0.07;
 }
-section.section--banner.section--banner--right .section__body .section__isotipo img {
+section.section--banner.section--banner--right .section__banner .section__isotipo img {
   width: 200px;
 }
-section.section--banner.section--banner--right .section__body .section__bg {
+section.section--banner.section--banner--right .section__banner .section__bg {
   right: initial;
   left: 0;
 }
 @media (min-width: 720px) {
-  section.section--banner.section--banner--right .section__body .section__bg {
+  section.section--banner.section--banner--right .section__banner .section__bg {
     width: 70%;
   }
 }
-section.section--banner.section--banner--right .section__body .section__bg:after {
+section.section--banner.section--banner--right .section__banner .section__bg:after {
   content: "";
   position: absolute;
   top: 0;
@@ -3577,7 +3684,7 @@ section.section--banner.section--banner--right .section__body .section__bg:after
   right: 0;
 }
 @media (min-width: 720px) {
-  section.section--banner.section--banner--right .section__body .section__bg:after {
+  section.section--banner.section--banner--right .section__banner .section__bg:after {
     background: #14274e;
     background: linear-gradient(270deg, #14274e, transparent);
   }
@@ -3594,14 +3701,14 @@ section.section--banner .section__isotipo {
 section.section--banner .section__isotipo img {
   width: 200px;
 }
-section.section--banner .section__body {
+section.section--banner .section__banner {
   position: relative;
   background-color: #14274e;
   color: #fff;
   border-radius: 5px;
   padding: 30px;
   padding-top: 200px;
-  min-height: 300px;
+  min-height: 350px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -3614,30 +3721,30 @@ section.section--banner .section__body {
   overflow: hidden;
 }
 @media (min-width: 720px) {
-  section.section--banner .section__body {
+  section.section--banner .section__banner {
     padding: 40px;
   }
 }
-section.section--banner .section__body .section__content {
+section.section--banner .section__banner .section__content {
   color: #fff;
 }
 @media (min-width: 720px) {
-  section.section--banner .section__body .section__content {
+  section.section--banner .section__banner .section__content {
     max-width: 70%;
   }
 }
-section.section--banner .section__body .section__bg {
+section.section--banner .section__banner .section__bg {
   height: 60%;
 }
 @media (min-width: 720px) {
-  section.section--banner .section__body .section__bg {
+  section.section--banner .section__banner .section__bg {
     width: 70%;
     height: 100%;
     left: initial;
     right: 0;
   }
 }
-section.section--banner .section__body .section__bg:after {
+section.section--banner .section__banner .section__bg:after {
   content: "";
   position: absolute;
   top: 0;
@@ -3648,7 +3755,7 @@ section.section--banner .section__body .section__bg:after {
   background: linear-gradient(0deg, #14274e, transparent);
 }
 @media (min-width: 720px) {
-  section.section--banner .section__body .section__bg:after {
+  section.section--banner .section__banner .section__bg:after {
     background: #14274e;
     background: linear-gradient(90deg, #14274e, transparent);
   }
