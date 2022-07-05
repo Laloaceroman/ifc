@@ -4536,6 +4536,19 @@ app.scroll = {
         return $('header').removeClass("header--color");
       }
     });
+    $(".header-options-search").click(function(e) {
+      e.preventDefault();
+      $("header").addClass("header--search-in");
+      return setTimeout(function() {
+        return $(".header__searchinput input").focus();
+      }, 100);
+    });
+    $(".header__searchinput input").blur(function() {
+      $("header").addClass("header--search-out");
+      return setTimeout(function() {
+        return $("header").removeClass("header--search-in header--search-out");
+      }, 400);
+    });
     $("[data-goto]").click(function(e) {
       e.preventDefault();
       app.scroll.goto($(this).attr("data-goto"));
