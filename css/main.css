@@ -1823,6 +1823,11 @@ footer .footer__infos ul li {
   line-height: 20px;
   padding: 5px;
 }
+footer .footer__infos ul li a {
+  color: #fff;
+  font-weight: 500;
+  text-decoration: underline;
+}
 footer .footer__nav {
   padding: 20px 0;
   border-top: 1px solid rgba(255,255,255,0.1);
@@ -2514,7 +2519,7 @@ header .header__right .header__item.header__item--search .header__search span {
 }
 @media (min-width: 720px) {
   header .header__right .header__item.header__item--search .header__search span {
-    top: 12px;
+    top: 8px;
   }
 }
 header .header__right .header__item.header__item--search .header__search input {
@@ -2613,6 +2618,16 @@ header.header--hover .header__item.header__item--search .header__search input::p
 header.header--static .header__item.header__item--search .header__search input::placeholder {
   color: #000;
 }
+header.header--color .header__secondary .header__right .header__item--social a,
+header.header--hover .header__secondary .header__right .header__item--social a,
+header.header--static .header__secondary .header__right .header__item--social a {
+  color: #000;
+}
+header.header--color .header__secondary .header__right .header__item--searchmobile a,
+header.header--hover .header__secondary .header__right .header__item--searchmobile a,
+header.header--static .header__secondary .header__right .header__item--searchmobile a {
+  color: #000;
+}
 @media (max-width: 1090px) {
   header .header__nav {
     display: none;
@@ -2647,10 +2662,10 @@ header.header--static .header__item.header__item--search .header__search input::
   }
   header .header__nav .header__nav__nav ul li a {
     color: #fff;
-    font-weight: 400;
+    font-weight: bold;
     padding: 15px 20px;
     display: block;
-    font-size: 16px;
+    font-size: 18px;
   }
   header .header__nav .header__nav__nav ul li a .fa {
     float: right;
@@ -2796,8 +2811,36 @@ header.header--static .header__item.header__item--search .header__search input::
     margin-left: 10px;
   }
   header .header__actions {
-    display: inline-block;
+    display: -ms-flexbox;
+    display: flex;
     line-height: 0;
+  }
+  header .header__actions .header__infos {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: start;
+        align-items: flex-start;
+    margin-right: 20px;
+  }
+  header .header__actions .header__infos .header__info {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+  header .header__actions .header__infos .header__info:first-child {
+    margin-bottom: 2px;
+  }
+  header .header__actions .header__infos .header__info a {
+    color: #000;
+  }
+  header .header__actions .header__infos .header__info a span {
+    float: left;
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
   }
   header .header__button {
     display: inline-block;
